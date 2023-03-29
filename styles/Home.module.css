@@ -1,19 +1,9 @@
-.title h1 {
-  color: rgb(39, 39, 39);
-  display: flex;
+.main {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 500px);
+  grid-gap: 3rem;
   align-items: center;
   justify-content: center;
-  padding: 5rem;
-  font-size: 2rem;
-}
-
-.main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 3rem;
-}
-
-@media screen and (max-width: 768px) {
-  .main {
-  }
 }

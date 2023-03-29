@@ -1,5 +1,6 @@
 import { GraphQLClient, gql } from "graphql-request";
 import styles from "../../styles/Slug.module.css";
+import Image from "next/image";
 
 const graphcms = new GraphQLClient(
   "https://api-us-west-2.hygraph.com/v2/clfsoo4kq26ga01t714pq4g9a/master"
@@ -25,6 +26,21 @@ const QUERY = gql`
         createdBy {
           id
         }
+        url
+      }
+      imageOne {
+        url
+      }
+      imageTwo {
+        url
+      }
+      imageThree {
+        url
+      }
+      imageFour {
+        url
+      }
+      imageFive {
         url
       }
     }
@@ -62,11 +78,6 @@ export async function getStaticProps({ params }) {
 export default function BlogPost({ post }) {
   return (
     <main className={styles.blog}>
-      <img
-        className={styles.cover}
-        src={post.coverPhoto.url}
-        alt={post.title}
-      />
       <div className={styles.title}>
         <div className={styles.authdetails}>
           <img src={post.author.avatar.url} alt={post.author.name} />
@@ -84,6 +95,16 @@ export default function BlogPost({ post }) {
         className={styles.content}
         dangerouslySetInnerHTML={{ __html: post.content.html }}
       ></div>
+
+      <div
+        className={styles.images}
+      >
+        <Image src={post.imageOne.url} alt="" />
+        <Image src={post.imageTwo.url} alt="" />
+        <Image src={post.imageThree.url} alt="" />
+        <Image src={post.imageFour.url} alt="" />
+        <Image src={post.imageFive.url} alt="" />
+      </div>
     </main>
   );
 };
