@@ -1,6 +1,6 @@
 import { GraphQLClient, gql } from "graphql-request";
 import styles from "../../styles/Slug.module.css";
-import Image from "next/image";
+import {Image} from "next/image"; 
 
 const graphcms = new GraphQLClient(
   "https://api-us-west-2.hygraph.com/v2/clfsoo4kq26ga01t714pq4g9a/master"
@@ -79,6 +79,8 @@ export default function BlogPost({ post }) {
       // return <div>
       //         <Image width={717} height={403} src={`${urlImage[i]}`} alt=""/>
       //       </div>
+      // const image = new Image(717, 717);
+      // image.src=`${urlImage[i]}`;
     console.log(urlImage[i])
     }
   // }
@@ -91,6 +93,8 @@ export default function BlogPost({ post }) {
 // }
 
   return (
+
+    
     <main className={styles.blog}>
       <div className={styles.title}>
         <div className={styles.authdetails}>
