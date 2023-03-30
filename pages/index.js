@@ -27,8 +27,10 @@ const QUERY = gql`
         }
         url
       }
-      altImage {
-        html
+      images {
+        image {
+          url
+        }
       }
     }
   }
