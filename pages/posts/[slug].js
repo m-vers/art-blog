@@ -28,20 +28,8 @@ const QUERY = gql`
         }
         url
       }
-      imageOne {
-        url
-      }
-      imageTwo {
-        url
-      }
-      imageThree {
-        url
-      }
-      imageFour {
-        url
-      }
-      imageFive {
-        url
+      altImage {
+        html
       }
     }
   }
@@ -88,7 +76,7 @@ export default function BlogPost({ post }) {
             </h6>
           </div>
         </div>
-        <h2>{post.title}</h2>
+        <h1>{post.title}</h1>
       </div>
 
       <div
@@ -98,13 +86,8 @@ export default function BlogPost({ post }) {
 
       <div
         className={styles.images}
-      >
-        <Image src={post.imageOne.url} alt="" />
-        <Image src={post.imageTwo.url} alt="" />
-        <Image src={post.imageThree.url} alt="" />
-        <Image src={post.imageFour.url} alt="" />
-        <Image src={post.imageFive.url} alt="" />
-      </div>
+        dangerouslySetInnerHTML={{ __html: post.altImage.html }}
+      ></div>
     </main>
   );
 };

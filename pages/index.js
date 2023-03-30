@@ -27,20 +27,8 @@ const QUERY = gql`
         }
         url
       }
-      imageOne {
-        url
-      }
-      imageTwo {
-        url
-      }
-      imageThree {
-        url
-      }
-      imageFour {
-        url
-      }
-      imageFive {
-        url
+      altImage {
+        html
       }
     }
   }
