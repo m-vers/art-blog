@@ -28,10 +28,8 @@ const QUERY = gql`
         }
         url
       }
-      images {
-        image {
-          url
-        }
+      altImage {
+        html
       }
     }
   }
@@ -66,32 +64,6 @@ export async function getStaticProps({ params }) {
 };
 
 export default function BlogPost({ post }) {
-  // const urlImage = QUERY.post?.[0].images.map(arrayItem => arrayItem.image.url);
-  // console.log(urlImage); 
-  // const urlImage = post.images?.[0].image.url; 
-  // console.log(post.images?.[0].image.url);
-  const urlImage = post.images.map(objItem => objItem.image.url);
-  // console.log(post.images.map(objItem => objItem.image.url));
-  // console.log(urlImage);
-
-  // const multipleURl = () => {
-    for(let i = 0; i < urlImage.length; i++) {
-      // return <div>
-      //         <Image width={717} height={403} src={`${urlImage[i]}`} alt=""/>
-      //       </div>
-      // const image = new Image(717, 717);
-      // image.src=`${urlImage[i]}`;
-    console.log(urlImage[i])
-    }
-  // }
-
-  // const multipleURl = () =>{
-  // for (const [index, element] of urlImage.entries()) { 
-  //    console.log(index, element);
-    // return <Image width={717} height={403} src={element} />; 
-  // }
-// }
-
   return (
 
     
@@ -110,17 +82,13 @@ export default function BlogPost({ post }) {
       </div>
 
       <div
-        className={styles.content}
         dangerouslySetInnerHTML={{ __html: post.content.html }}
       ></div>
 
-      <div className={styles.images}>
-        <img src={`${urlImage[0]}`} alt=""/>
-        <img src={`${urlImage[1]}`} alt=""/>
-        <img src={`${urlImage[2]}`} alt=""/>
-        <img src={`${urlImage[3]}`} alt=""/>
-        <img src={`${urlImage[4]}`} alt=""/>
-      </div>
+      <div
+        className={styles.image}
+        dangerouslySetInnerHTML={{ __html: post.altImage.html }}
+      ></div>
       
     </main>
   );

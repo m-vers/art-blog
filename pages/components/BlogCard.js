@@ -1,13 +1,12 @@
 import styles from "../../styles/BlogCard.module.css";
 import Link from "next/link";
-import Image from "next/image";
 
 function BlogPost({ title, author, coverPhoto, datePublish, slug }) {
   return (
     <div className={styles.card}>
       <div className={styles.imgContainer}>
       <Link href={`/posts/${slug}`}>
-        <Image layout="fill" src={coverPhoto.url} alt="" />
+        <img src={coverPhoto.url} alt="" />
           <div className={styles.textContainer}>
             <h2 className={styles.text}>{title}</h2>
             <div className={styles.details}>
