@@ -1,4 +1,4 @@
-import styles from "../../styles/BlogCard.module.css";
+import styles from "../styles/BlogCard.module.css";
 import Link from "next/link";
 
 function BlogCard({ title, author, coverPhoto, datePublish, slug }) {
