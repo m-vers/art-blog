@@ -1,7 +1,7 @@
 import styles from "../../styles/BlogCard.module.css";
 import Link from "next/link";
 
-function BlogPost({ title, author, coverPhoto, datePublish, slug }) {
+function BlogCard({ title, author, coverPhoto, datePublish, slug }) {
   return (
     <div className={styles.card}>
       <div className={styles.imgContainer}>
@@ -25,4 +25,4 @@ function BlogPost({ title, author, coverPhoto, datePublish, slug }) {
   );
 }
 
-export default BlogPost;
+export default BlogCard;
