@@ -6,7 +6,7 @@
   border-radius: 2rem;
   overflow: hidden;
   box-shadow: 15px 20px 40px rgba(51, 89, 158, 0.4);
-  height: 500px;
+  height: auto;
 }
 
 .card h2 {
@@ -75,6 +75,17 @@
   .card {
     margin: 0rem 2rem;
     margin-bottom: 1rem;
-    height: 440px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .details{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .author img{
+    display: none;
   }
 }
